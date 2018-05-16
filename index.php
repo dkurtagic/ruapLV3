@@ -47,28 +47,33 @@ $date = date("Y-m-d");
 
 // Insert data
 $sql_insert = "INSERT INTO registration_tbl (name, email, date)
-VALUES (?,?,?)";
+VALUES ('$name','$email','$date')";
 
-/* create a prepared statement */
-$stmt =  $mysqli->stmt_init();
-if ($stmt->prepare($sql_insert)) {
-
-    /* bind parameters for markers */
-    // $stmt->bind_param("?", $name);
-    // $stmt->bind_param("?", $name);
-    // $stmt->bind_param("?", $name);
-    $stmt->bind_param("is",$name,$email,$date);
-
-    /* execute query */
-    $stmt->execute();
-
-    /* close statement */
-    $stmt->close();
+if ($conn->multi_query($sql_insert) === TRUE) {
+    echo "New records created successfully";
+} else {
+    echo "Error: " . $sql_insert . "<br>" . $conn->error;
 }
-else {
-  echo "stateent failed";
-}
-}
+// /* create a prepared statement */
+// $stmt =  $mysqli->stmt_init();
+// if ($stmt->prepare($sql_insert)) {
+//
+//     /* bind parameters for markers */
+//     // $stmt->bind_param("?", $name);
+//     // $stmt->bind_param("?", $name);
+//     // $stmt->bind_param("?", $name);
+//     $stmt->bind_param("is",$name,$email,$date);
+//
+//     /* execute query */
+//     $stmt->execute();
+//
+//     /* close statement */
+//     $stmt->close();
+// }
+// else {
+//   echo "stateent failed";
+// }
+// }
     // /* bind result variables */
     // $stmt->bind_result($district);
     //
