@@ -19,7 +19,7 @@
     }
 
     echo 'Connected successfully';
-
+/*
     $sql = 'CREATE Database ruap';
     $retval = mysql_query( $sql, $conn );
 
