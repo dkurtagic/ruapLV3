@@ -27,7 +27,7 @@ $pwd = "Ruap1234";
 $db = "ruap";
 // Connect to database.
 
-$conn = mysqli_connect($host,$user,$pwd);
+$conn = mysqli_connect($host,$user,$pwd,$db);
 if (mysqli_connect_errno())
   {
         echo "<h3>Failed to connect to MySQL:</h3> " . mysqli_connect_error();
