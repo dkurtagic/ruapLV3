@@ -41,19 +41,36 @@ if (mysqli_connect_errno())
   // Insert registration info
   if(!empty($_POST)) {
 
-$nme = $_POST['name'];
-$mail= $_POST['email'];
-$dat = date("Y-m-d");
+$name = $_POST['name'];
+$email = $_POST['email'];
+$date = date("Y-m-d");
 // Insert data
 $sql_insert = "INSERT INTO registration_tbl (name, email, date)
-VALUES ($nme,$mail,$dat)";
-if ($conn->query($sql_insert) === TRUE) {
-  echo "<h3>Your're registered!</h3>";
-} else {
-    echo "Error registering: " . $conn->error;
-}
+VALUES (?,?,?)";
 
+/* create a prepared statement */
+$stmt =  $mysqli->stmt_init();
+if ($stmt->prepare($sql_insert)) {
+
+    /* bind parameters for markers */
+    // $stmt->bind_param("?", $name);
+    // $stmt->bind_param("?", $name);
+    // $stmt->bind_param("?", $name);
+    $stmt->bindValue(1, $name);
+    $stmt->bindValue(2, $email);
+    $stmt->bindValue(3, $date);
+    /* execute query */
+    $stmt->execute();
+
+    /* close statement */
+    $stmt->close();
 }
+    // /* bind result variables */
+    // $stmt->bind_result($district);
+    //
+    // /* fetch value */
+    // $stmt->fetch();
+
 
 // // Retrieve data
 // $sql_select = "SELECT * FROM registration_tbl";
