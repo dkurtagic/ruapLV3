@@ -7,7 +7,7 @@
     $host = "127.0.0.1:52932";
     $user = "azure";
     $pwd = "6#vWHD_$";
-    $db = "ruap";
+    $db = "localdb";
 
     $conn = mysqli_connect($host,$user,$pwd);
 
