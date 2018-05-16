@@ -30,9 +30,10 @@ $db = "localdb";
 $conn = mysqli_connect($host,$user,$pwd);
 if (mysqli_connect_errno())
   {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    echo "<h3>Failed to connect to MySQL:</h3> " . mysqli_connect_error();
     // die();
   }
+  echo "works";
 
 //   // Insert registration info
 //   if(!empty($_POST)) {
