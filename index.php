@@ -37,22 +37,22 @@ if (mysqli_connect_errno())
   }
 
 
-  // Insert registration info
-  if(!empty($_POST)) {
-
-$name = $_POST['name'];
-$email = $_POST['email'];
-$date = date("Y-m-d");
-// Insert data
-$sql_insert = "INSERT INTO registration_tbl (name, email, date)
-VALUES (?,?,?)";
-if ($conn->query($sql_insert) === TRUE) {
-  echo "<h3>Your're registered!</h3>";
-} else {
-    echo "Error registering: " . $conn->error;
-}
-
-}
+//   // Insert registration info
+//   if(!empty($_POST)) {
+//
+// $name = $_POST['name'];
+// $email = $_POST['email'];
+// $date = date("Y-m-d");
+// // Insert data
+// $sql_insert = "INSERT INTO registration_tbl (name, email, date)
+// VALUES (?,?,?)";
+// if ($conn->query($sql_insert) === TRUE) {
+//   echo "<h3>Your're registered!</h3>";
+// } else {
+//     echo "Error registering: " . $conn->error;
+// }
+//
+// }
 
 // // Retrieve data
 // $sql_select = "SELECT * FROM registration_tbl";
