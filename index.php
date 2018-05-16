@@ -64,7 +64,7 @@ if ($conn->query($sql_insert) === TRUE) {
   echo "<tr><th>Name</th>";
   echo "<th>Email</th>";
   echo "<th>Date</th></tr>";
-  while($registrant = $result->fetch_assoc()) {
+  while($registrant = $registrants->fetch_assoc()) {
     echo "<tr><td>".$registrant['name']."</td>";
     echo "<td>".$registrant['email']."</td>";
     echo "<td>".$registrant['date']."</td></tr>";
