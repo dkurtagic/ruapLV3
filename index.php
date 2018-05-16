@@ -47,46 +47,19 @@ $date = date("Y-m-d");
 $sql_insert = "INSERT INTO registration_tbl (name, email, date)
 VALUES ('$name','$email','$date')";
 
-if ($conn->multi_query($sql_insert) === TRUE) {
-    echo "New records created successfully";
+if ($conn->query($sql_insert) === TRUE) {
 } else {
-    echo "Error: " . $sql_insert . "<br>" . $conn->error;
 }
 }
-// /* create a prepared statement */
-// $stmt =  $mysqli->stmt_init();
-// if ($stmt->prepare($sql_insert)) {
-//
-//     /* bind parameters for markers */
-//     // $stmt->bind_param("?", $name);
-//     // $stmt->bind_param("?", $name);
-//     // $stmt->bind_param("?", $name);
-//     $stmt->bind_param("is",$name,$email,$date);
-//
-//     /* execute query */
-//     $stmt->execute();
-//
-//     /* close statement */
-//     $stmt->close();
-// }
-// else {
-//   echo "stateent failed";
-// }
-// }
-    // /* bind result variables */
-    // $stmt->bind_result($district);
-    //
-    // /* fetch value */
-    // $stmt->fetch();
 
 
 // // Retrieve data
-// $sql_select = "SELECT * FROM registration_tbl";
-// if ($conn->query($sql_select) === TRUE) {
-//   echo "<h3>Your're registered!</h3>";
-// } else {
-//     echo "Error registering: " . $conn->error;
-// }
+$sql_select = "SELECT * FROM registration_tbl";
+if ($conn->query($sql_select) === TRUE) {
+  echo "<h3>Your're registered!</h3>";
+} else {
+    echo "Error registering: " . $conn->error;
+}
 
 // $stmt = $conn->query($sql_select);
 //   $registrants = $stmt->fetchAll();
