@@ -3,13 +3,13 @@
     $user = "ruapUser";
     $pwd = "ruap1234";
     $db = "ruap";
-
+/*
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
 
     if(! $conn ) {
       die('Could not connect: ' . mysqli_error());
     }
-
+*/
     echo 'Connected successfully';
 /*
     $sql = 'CREATE Database ruap';
@@ -34,6 +34,7 @@
     }
 
     echo "Table registration created successfully\n";
-*/
+
     mysqli_close($conn);
+    */
 ?>
