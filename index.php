@@ -30,29 +30,30 @@ $db = "ruap";
 $conn = mysqli_connect($host,$user,$pwd);
 if (mysqli_connect_errno())
   {
-        echo "Failed to connect to MySQL:" . mysqli_connect_error();
+        echo "<h3>Failed to connect to MySQL:</h3> " . mysqli_connect_error();
   }
   else {
-    echo "Connected successfully;
+    echo '<h3>Connected successfully</h3>';
   }
 
 
-//   // Insert registration info
-//   if(!empty($_POST)) {
-//
-// $name = $_POST['name'];
-// $email = $_POST['email'];
-// $date = date("Y-m-d");
-// // Insert data
-// $sql_insert = "INSERT INTO registration_tbl (name, email, date)
-// VALUES (?,?,?)";
-// if ($conn->query($sql_insert) === TRUE) {
-//   echo "<h3>Your're registered!</h3>";
-// } else {
-//     echo "Error registering: " . $conn->error;
-// }
-//
-// }
+
+  // Insert registration info
+  if(!empty($_POST)) {
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$date = date("Y-m-d");
+// Insert data
+$sql_insert = "INSERT INTO registration_tbl (name, email, date)
+VALUES (?,?,?)";
+if ($conn->query($sql_insert) === TRUE) {
+  echo "<h3>Your're registered!</h3>";
+} else {
+    echo "Error registering: " . $conn->error;
+}
+
+}
 
 // // Retrieve data
 // $sql_select = "SELECT * FROM registration_tbl";
