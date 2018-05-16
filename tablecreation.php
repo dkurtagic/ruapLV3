@@ -4,14 +4,14 @@
     $pwd = "ruap1234";
     $db = "ruap";
 
-    $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+    $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
 
     if(! $conn ) {
-      die('Could not connect: ' . mysql_error());
+      die('Could not connect: ' . mysqli_error());
     }
 
     echo 'Connected successfully';
-
+/*
     $sql = 'CREATE Database ruap';
     $retval = mysql_query( $sql, $conn );
 
@@ -34,6 +34,6 @@
     }
 
     echo "Table registration created successfully\n";
-
-    mysql_close($conn);
+*/
+    mysqli_close($conn);
 ?>
