@@ -4,47 +4,33 @@
     $pwd = "Ruap1234";
     $db = "ruap";
 
-    $con = mysqli_connect($host,$user,$pwd);
+    $conn = mysqli_connect($host,$user,$pwd);
 
     // Check connection
     if (mysqli_connect_errno())
       {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
       }
-    echo 'Connected successfully';
-
-/*
-    $conn = mysql_connect($dbhost, $dbuser, $dbpass);
-
-    if(! $conn ) {
-      die('Could not connect: ' . mysql_error());
-    }
-
-    echo 'Connected successfully';
+      else {
+        echo 'Connected successfully';
+      }
 
     $sql = 'CREATE Database ruap';
-    $retval = mysql_query( $sql, $conn );
-
-    if(! $retval ) {
-        die('Could not create database: ' . mysql_error());
+    if ($conn->query($sql) === TRUE) {
+        echo "Database created successfully";
+    } else {
+        echo "Error creating database: " . $conn->error;
     }
-
-    echo "Database ruap created successfully\n";
-
 
     $sql_create = "CREATE TABLE registration_tbl(id INT NOT NULL
     AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(30), email
     VARCHAR(30), date DATE);";
 
-    mysql_select_db(db);
-    $retval = mysql_query( $sql, $conn );
-
-    if(! $retval ) {
-      die('Could not create table: ' . mysql_error());
+    if ($conn->query($sql_create) === TRUE) {
+        echo "Table registration_tbl created successfully";
+    } else {
+        echo "Error creating table: " . $conn->error;
     }
 
-    echo "Table registration created successfully\n";
-
-    mysql_close($conn);
-    */
+  $conn->close();
 ?>
