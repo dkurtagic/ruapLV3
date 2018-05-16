@@ -27,7 +27,7 @@ $pwd = "6#vWHD_$";
 $db = "localdb";
 // Connect to database.
 try {
-$conn = new PDO( "mysql:host=$host;dbname=$db", $user, $pwd);
+$conn = new PDO("mysql:host=$host;dbname=$db", $user, $pwd);
 $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); }
     catch(Exception $e){
         die(var_dump($e));
