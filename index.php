@@ -71,8 +71,9 @@ if ($conn->query($sql_insert) === TRUE) {
     } else {
   echo "<h3>No one is currently registered.</h3>"; }
 }
-} else {
+else {
   echo "Insert Failed";
+}
 }
 
 
