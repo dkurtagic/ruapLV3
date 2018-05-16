@@ -4,14 +4,16 @@
     $pwd = "Ruap1234";
     $db = "ruap";
 
-    // $con = mysqli_connect($host,$user,$pwd);
-    //
-    // // Check connection
-    // if (mysqli_connect_errno())
-    //   {
-    //   echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    //   }
+    $con = mysqli_connect($host,$user,$pwd);
 
+    // Check connection
+    if (mysqli_connect_errno())
+      {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+      }
+    echo 'Connected successfully';
+
+/*
     $conn = mysql_connect($dbhost, $dbuser, $dbpass);
 
     if(! $conn ) {
@@ -19,7 +21,7 @@
     }
 
     echo 'Connected successfully';
-/*
+
     $sql = 'CREATE Database ruap';
     $retval = mysql_query( $sql, $conn );
 
