@@ -1,7 +1,7 @@
 <?php
     $host = "ruapdbserver.mysql.database.azure.com";
-    $user = "ruapUser";
-    $pwd = "ruap1234";
+    $user = "ruapUser@ruapdbserver";
+    $pwd = "Ruap1234";
     $db = "ruap";
 
     $con = mysqli_connect($host,$user,$pwd);
