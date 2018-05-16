@@ -44,6 +44,7 @@ if (mysqli_connect_errno())
 $name = $_POST['name'];
 $email = $_POST['email'];
 $date = date("Y-m-d");
+
 // Insert data
 $sql_insert = "INSERT INTO registration_tbl (name, email, date)
 VALUES (?,?,?)";
@@ -64,6 +65,10 @@ if ($stmt->prepare($sql_insert)) {
 
     /* close statement */
     $stmt->close();
+}
+else {
+  echo "stateent failed";
+}
 }
     // /* bind result variables */
     // $stmt->bind_result($district);
