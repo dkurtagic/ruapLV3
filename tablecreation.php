@@ -1,7 +1,7 @@
 <?php
- $host = "192.168.1.2";
- $user = "root";
- $pwd = "";
+  $host = "127.0.0.1:52932";
+ $user = "azure";
+ $pwd = "6#vWHD_$";
  $db = "localdb";
 
  //Database=localdb;Data Source=127.0.0.1:56044;User Id=azure;Password=6#vWHD_$
