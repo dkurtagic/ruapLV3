@@ -21,19 +21,19 @@ Name <input type="text" name="name" id="name"/></br> Email <input type="text" na
 <?php
 // DB connection info
 //TODO: Update the values for $host, $user, $pwd, and $db //using the values you retrieved earlier from the Azure Portal. $host = "value of Data Source";
-$host = "127.0.0.1:52932"
-$user = "azure";
-$pwd = "6#vWHD_$";
-$db = "localdb";
-// Connect to database.
-
-$conn = mysqli_connect($host,$user,$pwd);
-if (mysqli_connect_errno())
-  {
-    echo "<h3>Failed to connect to MySQL:</h3> " . mysqli_connect_error();
-    // die();
-  }
-  echo "works";
+// $host = "127.0.0.1:52932"
+// $user = "azure";
+// $pwd = "6#vWHD_$";
+// $db = "localdb";
+// // Connect to database.
+//
+// $conn = mysqli_connect($host,$user,$pwd);
+// if (mysqli_connect_errno())
+//   {
+//     echo "<h3>Failed to connect to MySQL:</h3> " . mysqli_connect_error();
+//     // die();
+//   }
+//   echo "works";
 
 //   // Insert registration info
 //   if(!empty($_POST)) {
