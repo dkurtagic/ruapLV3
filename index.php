@@ -48,7 +48,6 @@ $sql_insert = "INSERT INTO registration_tbl (name, email, date)
 VALUES ('$name','$email','$date')";
 
 if ($conn->query($sql_insert) === TRUE) {
-} else {
   // // Retrieve data
   $sql_select = "SELECT * FROM registration_tbl";
   if ($conn->query($sql_select) === TRUE) {
@@ -72,6 +71,8 @@ if ($conn->query($sql_insert) === TRUE) {
     } else {
   echo "<h3>No one is currently registered.</h3>"; }
 }
+} else {
+  echo "Insert Failed";
 }
 
 
