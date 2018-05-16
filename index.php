@@ -57,9 +57,8 @@ if ($stmt->prepare($sql_insert)) {
     // $stmt->bind_param("?", $name);
     // $stmt->bind_param("?", $name);
     // $stmt->bind_param("?", $name);
-    $stmt->bindValue(1, $name);
-    $stmt->bindValue(2, $email);
-    $stmt->bindValue(3, $date);
+    $stmt->bind_param("is",$name,$email,$date);
+
     /* execute query */
     $stmt->execute();
 
