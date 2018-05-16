@@ -36,8 +36,6 @@ if (mysqli_connect_errno())
     echo '<h3>Connected successfully</h3>';
   }
 
-
-
   // Insert registration info
   if(!empty($_POST)) {
 
@@ -53,6 +51,7 @@ if ($conn->multi_query($sql_insert) === TRUE) {
     echo "New records created successfully";
 } else {
     echo "Error: " . $sql_insert . "<br>" . $conn->error;
+}
 }
 // /* create a prepared statement */
 // $stmt =  $mysqli->stmt_init();
