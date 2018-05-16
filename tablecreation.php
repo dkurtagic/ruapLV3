@@ -1,27 +1,39 @@
 <?php
-  $host = "127.0.0.1:52932";
- $user = "azure";
- $pwd = "6#vWHD_$";
- $db = "localdb";
+    $host = "127.0.0.1:52932";
+    $user = "azure";
+    $pwd = "6#vWHD_$";
+    $db = "ruap";
 
- //Database=localdb;Data Source=127.0.0.1:56044;User Id=azure;Password=6#vWHD_$
- // Connect to database.
- try {
- $conn = new PDO( "mysql:host=$host;dbname=$db", $user, $pwd);
- $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
- }
- catch(Exception $e){
- die(var_dump($e));
- }
+    $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+   
+    if(! $conn ) {
+      die('Could not connect: ' . mysql_error());
+    }
+   
+    echo 'Connected successfully';
+   
+    $sql = 'CREATE Database ruap';
+    $retval = mysql_query( $sql, $conn );
+   
+    if(! $retval ) {
+        die('Could not create database: ' . mysql_error());
+    }
+   
+    echo "Database ruap created successfully\n";
 
 
- $sql_create = "CREATE TABLE registration_tbl(id INT NOT NULL
-AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(30), email
-VARCHAR(30), date DATE);
-";
+    $sql_create = "CREATE TABLE registration_tbl(id INT NOT NULL
+    AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(30), email
+    VARCHAR(30), date DATE);";
+    
+    mysql_select_db(db);
+    $retval = mysql_query( $sql, $conn );
+   
+    if(! $retval ) {
+      die('Could not create table: ' . mysql_error());
+    }
+   
+    echo "Table registration created successfully\n";
 
- $stmt = $conn->prepare($sql_create);
-
- $stmt->execute();
-
- ?>
+    mysql_close($conn);
+?>

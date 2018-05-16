@@ -24,7 +24,7 @@ Name <input type="text" name="name" id="name"/></br> Email <input type="text" na
 $host = "127.0.0.1:52932"
 $user = "azure";
 $pwd = "6#vWHD_$";
-$db = "localdb";
+$db = "ruap";
 // Connect to database.
 try {
 $conn = new PDO( "mysql:host=$host;dbname=$db", $user, $pwd);
