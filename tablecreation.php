@@ -4,10 +4,10 @@
     // $pwd = "Ruap1234";
     // $db = "ruap";
 
-    $host = "127.0.0.1:52932";
-    $user = "azure";
-    $pwd = "6#vWHD_$";
-    $db = "localdb";
+    $host = "ruaplv3database-server.mysql.database.azure.com";
+    $user = "jbxtqhjyvm";
+    $pwd = "15YIEYB3SO8LV54B";
+    $db = "ruaplv3database-server";
 
     $conn = mysqli_connect($host,$user,$pwd);
 
