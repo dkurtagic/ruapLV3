@@ -24,7 +24,7 @@ Name <input type="text" name="name" id="name"/></br> Email <input type="text" na
 $host = "ruaplv3database-server.mysql.database.azure.com";
 $user = "jbxtqhjyvm";
 $pwd = "!Ruap2023";
-$db = "ruaplv3database-server";
+$db = "ruaplv3server-database";
 // Connect to database.
 
 $conn = mysqli_connect($host,$user,$pwd,$db);
