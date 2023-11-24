@@ -6,7 +6,7 @@
 
     $host = "ruaplv3database-server.mysql.database.azure.com";
     $user = "jbxtqhjyvm";
-    $pwd = "15YIEYB3SO8LV54B";
+    $pwd = "!Ruap2023";
     $db = "ruaplv3database-server";
 
     $conn = mysqli_connect($host,$user,$pwd);
@@ -19,13 +19,6 @@
       else {
         echo 'Connected successfully';
       }
-
-    $sql = 'CREATE Database ruap';
-    if ($conn->query($sql) === TRUE) {
-        echo "Database created successfully";
-    } else {
-        echo "Error creating database: " . $conn->error;
-    }
 
     mysqli_select_db($conn,$db);
 
